@@ -1,0 +1,21 @@
+language: python
+
+python:
+  - 3.5
+  
+services:
+  - docker
+  
+install:
+  - sudo pip install docker-compose
+
+before_script:
+  - docker-compose up --build -d
+  - docker-compose run web /usr/local/bin/python create_db.py
+  - docker-compose logs
+
+script:
+  - docker exec app python -m unittest discover
+
+after_script:
+  - docker-compose down
