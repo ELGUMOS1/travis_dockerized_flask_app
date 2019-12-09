@@ -1,11 +1,17 @@
+sudo: required
+dist: trusty
 language: python
+
 python:
-  - "3.6"
+  - 3.5
   
 services:
   - docker
   
 install:
+
+  - sudo apt-get update
+  - sudo apt install python-pip
   - pip install docker-compose
 
 before_script:
