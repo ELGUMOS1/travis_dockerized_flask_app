@@ -7,7 +7,7 @@ services:
   - docker
   
 install:
-  - sudo pip install docker-compose
+  - pip install docker-compose
 
 before_script:
   - docker-compose up --build -d
