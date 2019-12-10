@@ -19,12 +19,11 @@ before_install:
   - sudo mv docker-compose /usr/local/bin  
   
 install:
-  
   - pip install docker-compose
 
 before_script:
   - docker-compose up --build -d
-  - docker-compose run --name web -d web /usr/local/bin/python create_db.py
+  - docker-compose run -d --name web web /usr/local/bin/python create_db.py
   - docker-compose logs
 
 script:
