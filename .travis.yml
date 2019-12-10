@@ -27,7 +27,6 @@ before_script:
   - docker-compose logs
 
 script:
-  - docker exec -t web "python -m unittest discover"
-
+  - docker exec -t web_1 python -m unittest discover
 after_script:
   - docker-compose down
