@@ -8,7 +8,8 @@ python:
   
 services:
   - docker
-  
+
+
 before_install:
   - sudo apt-get update
   - sudo apt install python-pip
@@ -27,7 +28,6 @@ before_script:
   - docker-compose run -d --name web web /usr/local/bin/python create_db.py
   - docker ps -a
   - docker-compose logs
-
 script:
   - docker exec web coverage run -m unittest discover
 after_script:
