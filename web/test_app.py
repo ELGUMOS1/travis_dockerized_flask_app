@@ -3,7 +3,7 @@
 import os
 import unittest
 
-from . import app, db
+from app import app, db
 
 
 TEST_DB = 'test.db'
