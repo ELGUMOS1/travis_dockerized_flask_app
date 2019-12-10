@@ -29,6 +29,6 @@ before_script:
   - docker ps -a
   - docker-compose logs
 script:
-  - docker exec web coverage run -m unittest discover
+  - docker exec travis_dockerized_flask_app_web_1 coverage run -m unittest discover
 after_script:
   - docker-compose down
