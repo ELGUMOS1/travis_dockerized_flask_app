@@ -23,10 +23,10 @@ db.create_all()
 
 # Insert  data
 for i in range(1,15):
-	    temp = str(solveNQueens(i))
-	    sol = Solutions(n = i, sol = temp)
-	    db.session.add(sol)
-	    db.session.commit()
+	temp = str(solveNQueens(i))
+	sol = Solutions(n = i, sol = temp)
+	db.session.add(sol)
+	db.session.commit()
 	    
 #
 print('...done!')
