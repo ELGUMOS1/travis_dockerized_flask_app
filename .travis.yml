@@ -24,7 +24,7 @@ install:
 
 before_script:
   - docker-compose up --build -d
-  - docker-compose run --name web web /usr/local/bin/python create_db.py
+  - docker-compose run --name web -d web /usr/local/bin/python create_db.py
   - docker-compose logs
 
 script:
