@@ -19,6 +19,7 @@ before_install:
   - sudo mv docker-compose /usr/local/bin  
   
 install:
+  - pip install coverage
   - pip install docker-compose
 
 before_script:
@@ -28,6 +29,6 @@ before_script:
   - docker-compose logs
 
 script:
-  - unittest
+  - docker exec web coverage run -m unittest discover
 after_script:
   - docker-compose down
