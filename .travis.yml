@@ -27,6 +27,7 @@ before_script:
   - docker ps -a
   - docker-compose logs
 
-
+script:
+  - unittest
 after_script:
   - docker-compose down
