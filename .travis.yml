@@ -22,7 +22,7 @@ install:
   - pip install docker-compose
 
 before_script:
-  - docker-compose up --build -d
+  - docker-compose up -d --build 
   - docker-compose run -d --name web web /usr/local/bin/python create_db.py
   - docker-compose logs
 
