@@ -24,6 +24,7 @@ services:
       - web-data:/usr/src/app/static
     links:
       - web:web
+      
   data:
     image: postgres:latest
     volumes:
