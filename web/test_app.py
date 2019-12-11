@@ -34,9 +34,9 @@ class BasicTests(unittest.TestCase):
         result = self.app.get('/get/8')     
         self.assertIn(b'[4, 6, 0, 3, 1, 7, 5, 2], [4, 6, 1, 3, 7, 0, 2, 5], [4, 6, 1, 5, 2, 0, 3, 7]', result.data)
         
-    def test_eight_queen_puzzle_10(self):  
-        result = self.app.get('/get/10')     
-        self.assertIn(b'[9, 7, 4, 1, 3, 0, 6, 8, 2, 5], [9, 7, 4, 1, 3, 0, 6, 8, 5, 2], [9, 7, 4, 2, 0, 5, 1, 8, 6, 3]', result.data)
+    def test_eight_queen_puzzle_9(self):  
+        result = self.app.get('/get/9')     
+        self.assertIn(b'[8, 6, 1, 3, 0, 7, 4, 2, 5], [8, 6, 2, 7, 1, 4, 0, 5, 3], [8, 6, 3, 1, 7, 5, 0, 2, 4]', result.data)
 
   
 if __name__ == "__main__":
