@@ -42,7 +42,7 @@ for i in range(1,5):
 @app.route('/get/<n>')
 def index(n):
     sol = Post.query.filter_by(n=n).all()
-    return str(sol)
+    return sol
 
 @app.route("/")
 def home():
