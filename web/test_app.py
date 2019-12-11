@@ -31,7 +31,7 @@ class BasicTests(unittest.TestCase):
         
     def test_eight_queen_puzzle(self):  
         result = self.app.get('/get/4')      
-        print result.data     
+        print (result.data)     
         self.assertEqual(result.status_code, 200)
         #self.assertIn('[[1, 3, 0, 2], [2, 0, 3, 1]]',str(result.data))
 
