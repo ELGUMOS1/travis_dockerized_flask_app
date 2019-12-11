@@ -14,7 +14,7 @@ app.config.from_object(BaseConfig)
 db = SQLAlchemy(app)
 
 from models import Post
-
+#solution for the eightqueenspuzzle
 def solveNQueens(n):
 	sols = []
 	def dfs(state, pd, nd):
