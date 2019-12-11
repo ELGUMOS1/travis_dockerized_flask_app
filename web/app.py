@@ -7,6 +7,7 @@ from config import BaseConfig
 #### config ####
 ################
 app = Flask(__name__, instance_relative_config=True)
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config.from_object(BaseConfig)
 db = SQLAlchemy(app)
 
@@ -35,7 +36,7 @@ db.create_all()
 # Insert  data
 for i in range(1,5):
 	temp = str(solveNQueens(i))
-	sol = Post(n = i, sol = temp)
+	sol = Post(n = i, sol = 'dos')
 	db.session.add(sol)
 	db.session.commit()
 	    
