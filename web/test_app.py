@@ -47,6 +47,7 @@ class BasicTests(unittest.TestCase):
     def test_eight_queen_puzzle_8(self):  
         result = self.app.get('/get/8') 
         l = list(result.data.decode())
+        print(l)
         self.assertEqual(len(l)[0], 92)
         
 
