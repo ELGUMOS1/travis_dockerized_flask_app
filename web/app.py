@@ -36,7 +36,7 @@ db.create_all()
 # Insert  data
 for i in range(1,5):
 	temp = str(solveNQueens(i))
-	sol = Post(n = i, sol = 'dos')
+	sol = Post(n = i, sol = str(i))
 	db.session.add(sol)
 	db.session.commit()
 	    
