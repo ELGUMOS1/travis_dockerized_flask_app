@@ -37,18 +37,16 @@ class BasicTests(unittest.TestCase):
         
     def test_eight_queen_puzzle_4(self):  
         result = self.app.get('/get/4')         
-        #self.assertEqual(result.status_code, 200)
         self.assertIn(b'[[1, 3, 0, 2], [2, 0, 3, 1]]',result.data)
         
     def test_eight_queen_puzzle_7(self):  
         result = self.app.get('/get/7')         
-        #self.assertEqual(result.status_code, 200)
         self.assertIn(sol_7.encode(),result.data)
         
-   ''' def test_eight_queen_puzzle_10(self):  
-        result = self.app.get('/get/10') 
-        l = list(result.data.decode())
-        self.assertEqual(len(l), 724)'''
+   # def test_eight_queen_puzzle_10(self):  
+    #    result = self.app.get('/get/10') 
+     #   l = list(result.data.decode())
+      #  self.assertEqual(len(l), 724)
         
 
   
