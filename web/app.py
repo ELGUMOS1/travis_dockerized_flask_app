@@ -45,7 +45,7 @@ for i in range(1,5):
 @app.route('/get/<d>')
 def index(d):
     sol = Post.query.filter(Post.n == int(d)).first()
-    return sol
+    return str(sol.sol)
 
 @app.route("/")
 def home():
