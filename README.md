@@ -1,5 +1,5 @@
 # travis_dockerized_flask_app
-Simple dockerized python flask app
+Simple dockerized python flask app using postgres, flask, nginx and Flask-SQLAlchemy
 The source code is in the web directory, the main app is the app.py file.
 The database was built using postgres and is composed by a single table 'solutions' composed by 2 columns 'n' and its solutions 'sol'.
 The solution to the EightQueensPuzzle is in the app.py, this solution was proposed by WangQiuc in leetcode.
