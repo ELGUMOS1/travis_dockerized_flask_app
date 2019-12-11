@@ -1,5 +1,5 @@
 from os.path import join, isfile
-from flask import Flask, jsonify, request
+from flask import Flask,request
 from flask_sqlalchemy import SQLAlchemy
 
 from config import BaseConfig
@@ -36,7 +36,7 @@ db.drop_all()
 db.create_all()
 
 # Insert  data
-for i in range(1,11):
+for i in range(1,9):
 	temp = str(solveNQueens(i))
 	sol = Post(n = i, sol = temp)
 	db.session.add(sol)
