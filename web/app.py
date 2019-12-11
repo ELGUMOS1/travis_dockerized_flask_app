@@ -44,7 +44,7 @@ for i in range(1,5):
 	    
 @app.route('/get/<d>')
 def index(d):
-    sol = s.query(Post).filter_by(n=d)
+    sol = s.query(Post).get(d)
     return str(sol)
 
 @app.route("/")
