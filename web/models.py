@@ -1,13 +1,14 @@
 # models.py
 from app import db
 
-from sqlalchemy import String, Integer, Column
+
 class Post(db.Model):
 
     __tablename__ = 'solutions'
-    
-    n = Column(Integer, primary_key=True)
-    sol = Column(String)
 
-    
-        
+    n = db.Column(db.Integer, primary_key=True)
+    sol = db.Column(db.String, nullable=False)
+
+    def __init__(self, n, sol):
+        self.sol = sol
+        self.n = n
