@@ -1,12 +1,14 @@
 from os.path import join, isfile
 from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy_session import flask_scoped_session
 from config import BaseConfig
 
 ################
 #### config ####
 ################
 app = Flask(__name__, instance_relative_config=True)
+s = flask_scoped_session(session_factory, app)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config.from_object(BaseConfig)
 db = SQLAlchemy(app)
@@ -40,9 +42,9 @@ for i in range(1,5):
 	db.session.add(sol)
 	db.session.commit()
 	    
-@app.route('/get/<n>')
-def index(n):
-    sol = Post.query.all()
+@app.route('/get/<d>')
+def index(d):
+    sol = s.query(Post).filter_by(n=d)
     return str(sol)
 
 @app.route("/")
