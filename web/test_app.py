@@ -28,13 +28,15 @@ class BasicTests(unittest.TestCase):
         
     def test_eight_queen_puzzle_4(self):  
         result = self.app.get('/get/4')         
-        self.assertIn(b'[[1, 3, 0, 2], [2, 0, 3, 1]]',result.data)
-        
+        self.assertIn(b'[[1, 3, 0, 2], [2, 0, 3, 1]]',result.data) 
   
     def test_eight_queen_puzzle_8(self):  
         result = self.app.get('/get/8')     
-        self.assertIn(b'[5, 2, 0, 7, 3, 1, 6, 4], [5, 2, 0, 7, 4, 1, 3, 6]', result.data)
+        self.assertIn(b'[4, 6, 0, 3, 1, 7, 5, 2], [4, 6, 1, 3, 7, 0, 2, 5], [4, 6, 1, 5, 2, 0, 3, 7]', result.data)
         
+    def test_eight_queen_puzzle_10(self):  
+        result = self.app.get('/get/10')     
+        self.assertIn(b'[9, 7, 4, 1, 3, 0, 6, 8, 2, 5], [9, 7, 4, 1, 3, 0, 6, 8, 5, 2], [9, 7, 4, 2, 0, 5, 1, 8, 6, 3]', result.data)
 
   
 if __name__ == "__main__":
