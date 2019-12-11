@@ -40,7 +40,7 @@ for i in range(1,5):
 	db.session.commit()
 	    
 @app.route('/get/<n>')
-def index():
+def index(n):
     sol = app.query.filter_by(n=n).all()
     return sol
 
