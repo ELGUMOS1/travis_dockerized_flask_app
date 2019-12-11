@@ -21,8 +21,7 @@ class BasicTests(unittest.TestCase):
         
         app.config['WTF_CSRF_ENABLED'] = False
         app.config['DEBUG'] = False
-        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + \
-            os.path.join(app.config['BASEDIR'], TEST_DB)
+        
         self.app = app.test_client()
 
     # executed after each test
