@@ -1,6 +1,7 @@
 version: '3'
 
 services:
+
   integration_test:
       build:
           context: ./
