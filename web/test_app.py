@@ -42,12 +42,12 @@ class BasicTests(unittest.TestCase):
         [5, 2, 0, 3, 6, 4, 1], [5, 2, 4, 6, 0, 3, 1], [5, 2, 6, 3, 0, 4, 1], [5, 3, 1, 6, 4, 2, 0],\
         [5, 3, 6, 0, 2, 4, 1], [6, 1, 3, 5, 0, 2, 4], [6, 2, 5, 1, 4, 0, 3], [6, 3, 0, 4, 1, 5, 2], [6, 4, 2, 0, 5, 3, 1]]'
         result = self.app.get('/get/7')         
-        self.assertIn(sol_7.encode(),result.data)
+        self.assertEqual(sol_7.encode(),result.data)
         
-   # def test_eight_queen_puzzle_10(self):  
-    #    result = self.app.get('/get/10') 
-     #   l = list(result.data.decode())
-      #  self.assertEqual(len(l), 724)
+    def test_eight_queen_puzzle_8(self):  
+        result = self.app.get('/get/8') 
+        l = list(result.data.decode())
+        self.assertEqual(len(l), 92)
         
 
   
