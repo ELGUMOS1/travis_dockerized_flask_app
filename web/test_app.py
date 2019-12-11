@@ -31,5 +31,6 @@ class FlaskAppTests(unittest.TestCase):
         #print result.data
         
         self.assertIn('[[1, 3, 0, 2], [2, 0, 3, 1]]',result.data)
-
-   
+        
+if __name__ == "__main__":
+    unittest.main()
