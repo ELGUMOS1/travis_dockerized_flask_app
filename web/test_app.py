@@ -5,10 +5,6 @@ import unittest
 
 from app import app, db
 
-
-TEST_DB = 'test.db'
-
-
 class BasicTests(unittest.TestCase):
 
     ############################
