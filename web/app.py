@@ -38,14 +38,14 @@ db.create_all()
 # Insert  data
 for i in range(1,5):
 	temp = str(solveNQueens(i))
-	sol = Post(n = i, sol = str(i))
+	sol = Post(n = i, sol = temp)
 	db.session.add(sol)
 	db.session.commit()
 	    
 @app.route('/get/<d>')
 def index(d):
     sol = Post.query.filter(Post.n == int(d)).first()
-    return str(sol)
+    return sol
 
 @app.route("/")
 def home():
