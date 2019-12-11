@@ -27,7 +27,7 @@ before_script:
  
   - docker ps -a
   - docker-compose logs
-script:
-  - docker-compose exec python -m unittest discover
+
+  
 after_script:
   - docker-compose down
