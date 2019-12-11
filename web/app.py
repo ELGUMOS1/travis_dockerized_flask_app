@@ -10,7 +10,7 @@ app = Flask(__name__, instance_relative_config=True)
 app.config.from_object(BaseConfig)
 db = SQLAlchemy(app)
 
-from models import Solutions
+from models import Post
 
 def solveNQueens(n):
 	sols = []
