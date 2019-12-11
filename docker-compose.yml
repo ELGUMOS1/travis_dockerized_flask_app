@@ -2,17 +2,6 @@ version: '3'
 
 services:
 
-  integration_test:
-      build:
-          context: ./
-          dockerfile: Dockerfile.test
-      volumes:
-        - web-data:/usr/src/app/static
-      depends_on:
-        - web
-      links:
-        - web
-      command: ["python", "-m", "unittest", "discover"]
   web:
     restart: always
     build: ./web
