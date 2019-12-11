@@ -43,6 +43,10 @@ for i in range(1,5):
 def index():
     sol = app.query.filter_by(n=n).all()
     return sol
-    
+
+@app.route("/")
+def home():
+    return "Hello, World!"
+	        
 if __name__ == '__main__':
     app.run()
