@@ -24,7 +24,7 @@ def solveNQueens(n):
 			sols.append(state)
 	
 	dfs([], set(), set())
-	return sols
+	return str(sols)
 	
 # Drop all of the existing database tables
 db.drop_all()
@@ -42,7 +42,7 @@ for i in range(1,5):
 @app.route('/get/<n>')
 def index(n):
     sol = Post.query.all()
-    return sol
+    return str(sol)
 
 @app.route("/")
 def home():
